@@ -1,6 +1,6 @@
 # Gme205 Laboratory 5 Reflections
 ## 1. Where does polymorphism appear in your system?
-### Polymorphism appears when multiple spatial classes (Building, Parcel, Road, etc.) implement the same method name, such as area() or length(). This allows the system to treat all spatial objects uniformly, even though each class computes the method differently.
+### Polymorphism appears when spatial classes like Parcel, Building, and Road implement the same methods, such as area(), length(), or describe(). Each object handles the method according to its own behavior, allowing the program to call the same method on any object without needing to know its class. For example, feature.describe() outputs different results depending on whether the object is a Parcel, Building, or Road.
 
 ## 2. If you removed your algorithm planning step, how would your implementation likely change?
 
