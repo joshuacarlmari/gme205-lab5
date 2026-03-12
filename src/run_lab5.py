@@ -24,7 +24,6 @@ for item in data:
         features.append(Road(geom, width))
 
 
-# structured flow
 if not features:
     print("Error: No spatial objects loaded")
 
@@ -46,10 +45,20 @@ else:
         area_by_type[name] += area
 
 
-    print("Total Effective Area:", total_area)
+    #print("Total Effective Area:", total_area)
 
-    print("\nArea by Feature Type")
+    #print("\nArea by Feature Type")
 
-    for a, b in area_by_type.items():
-        print(a, b)
-        print(f"{a}: {b:.6f}")
+    print("\nIndividual Feature Areas")
+
+    for f in features:
+        print(type(f).__name__, int(f.effective_area()))
+
+
+    print("\nTotal Area by Feature Type")
+    for key, value in area_by_type.items():
+        print(f"{key}: {value:,.2f} m²")
+
+
+    print(f"\nTotal Effective Area: {total_area:,.2f} m²")
+
